@@ -34,4 +34,14 @@ public class PointTest {
         Assert.assertEquals(expected, result, 0.001);
     }
 
+    @Test
+    public void distanceWrongCalculate() {
+        Point p1 = new Point(3, 4);
+        Point p2 = new Point(-3, -4);
+        double expected = 11.0;
+        double result;
+        result = p1.distance(p2);
+        Assert.assertNotEquals(expected, result, 0.001);
+    }
+
 }
