@@ -2,6 +2,8 @@ package ru.job4j.oop;
 
 import static java.lang.Math.sqrt;
 
+/* This class is work with triangle. Calculate square. */
+
 public class Triangle {
     private final Point first;
     private final Point second;
