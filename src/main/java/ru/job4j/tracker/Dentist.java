@@ -1,9 +1,17 @@
 package ru.job4j.tracker;
 
 public class Dentist extends Doctor {
-    private int payment;
     private boolean replacement;
-    private String clinic;
+
+    public Dentist() {
+    }
+
+    public Dentist(String name, String surname, String education, String birthday,
+                   int grade,
+                   boolean replacement) {
+        super(name, surname, education, birthday, grade);
+        this.replacement = replacement;
+    }
 
     public void anesthesia() {
     }
