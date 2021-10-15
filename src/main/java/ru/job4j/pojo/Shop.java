@@ -12,7 +12,7 @@ public class Shop {
                 System.out.println(product.getName());
             }
         }
-        System.out.println("Index of the fist null object is: " + indexOfNull(products));
+        System.out.println("Index of the first null object is: " + indexOfNull(products));
     }
 
     public static int indexOfNull(Product[] products) {
