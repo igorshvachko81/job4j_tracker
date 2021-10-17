@@ -7,21 +7,19 @@ public class Library {
         Book book3 = new Book("Clean code", 440);
         Book book4 = new Book("CoderNet", 530);
         Book[] books = {book1, book2, book3, book4};
-        for (int index = 0; index < books.length; index++) {
-            Book book = books[index];
+        String bTitle = "Clean code";
+        for (Book book : books) {
             System.out.println("Title: " + book.getTitle() + ", " + book.getPages() + " pages");
         }
         Book bk = books[0];
         books[0] = books[3];
         books[3] = bk;
-        for (int index = 0; index < books.length; index++) {
-            Book book = books[index];
+        for (Book book : books) {
             System.out.println("Title: " + book.getTitle() + ", " + book.getPages() + " pages");
         }
         System.out.println("Trying to find information about book \"Clean code\" ...");
-        for (int index = 0; index < books.length; index++) {
-            Book book = books[index];
-            if (book.equals(book3)) {
+        for (Book book : books) {
+            if (book.getTitle().equals(bTitle)) {
                 System.out.println("Title: " + book.getTitle() + ", " + book.getPages() + " pages");
             }
         }
