@@ -7,7 +7,7 @@ public class Library {
         Book book3 = new Book("Clean code", 440);
         Book book4 = new Book("CoderNet", 530);
         Book[] books = {book1, book2, book3, book4};
-        String bTitle = "Clean code";
+
         for (Book book : books) {
             System.out.println("Title: " + book.getTitle() + ", " + book.getPages() + " pages");
         }
@@ -19,7 +19,7 @@ public class Library {
         }
         System.out.println("Trying to find information about book \"Clean code\" ...");
         for (Book book : books) {
-            if (book.getTitle().equals(bTitle)) {
+            if ("Clean code".equals(book.getTitle())) {
                 System.out.println("Title: " + book.getTitle() + ", " + book.getPages() + " pages");
             }
         }
