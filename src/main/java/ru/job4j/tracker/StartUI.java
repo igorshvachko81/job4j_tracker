@@ -10,5 +10,6 @@ public class StartUI {
         LocalDateTime ldt = localTime.getCreated();
         String dt = ldt.format(formatter);
         System.out.println(dt);
+        System.out.println(localTime);
     }
 }
