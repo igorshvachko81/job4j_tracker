@@ -70,6 +70,7 @@ public class StartUITest {
         Item item = tracker.add(new Item("Replaced item"));
         String replacedName = "New item name";
         Input in = new StubInput(
+                //изменение версии в GitHub
                 new String[] {"0", String.valueOf(item.getId()), replacedName, "1"}
         );
         UserAction[] actions = {
@@ -86,6 +87,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Deleted item"));
         Input in = new StubInput(
+                //изменение версии в GitHub
                 new String[] {"0", String.valueOf(item.getId()), "1"}
         );
         UserAction[] actions = {
