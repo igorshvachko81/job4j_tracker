@@ -1,6 +1,9 @@
 package ru.job4j.tracker;
 
 public class ReplaceItem implements UserAction {
+    /**
+     * Замена (редактирование) записи.
+     */
 
     private final Output out;
 

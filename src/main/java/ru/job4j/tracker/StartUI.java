@@ -32,7 +32,7 @@ public class StartUI {
                 new CreateAction(output),
                 new ActionList(output),
                 new ReplaceItem(output),
-                new DeleteItem(),
+                new DeleteItem(output),
                 new FindItemByID(output),
                 new FindItemByName(output),
                 new ExitProgram(output)
