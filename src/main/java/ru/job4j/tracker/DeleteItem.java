@@ -1,6 +1,9 @@
 package ru.job4j.tracker;
 
 public class DeleteItem implements UserAction {
+    /**
+     * Удаление записи
+     */
     private final Output out;
 
     public DeleteItem(Output out) {

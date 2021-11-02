@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 public class CreateAction implements UserAction {
     /**
-     * Добавление записи.
+     * Добавление записи
      */
     private final Output out;
 

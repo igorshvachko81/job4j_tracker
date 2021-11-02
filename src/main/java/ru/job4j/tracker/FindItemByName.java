@@ -1,6 +1,9 @@
 package ru.job4j.tracker;
 
 public class FindItemByName implements UserAction {
+    /**
+     * Поиск записей по имени
+     */
     private final Output out;
 
     public FindItemByName(Output out) {
