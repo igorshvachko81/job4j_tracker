@@ -1,6 +1,9 @@
 package ru.job4j.tracker;
 
 public class StartUI {
+    /**
+     * Главный класс
+     */
     private final Output out;
 
     public StartUI(Output out) {

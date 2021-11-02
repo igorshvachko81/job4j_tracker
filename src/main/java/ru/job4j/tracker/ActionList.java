@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 public class ActionList implements UserAction {
     /**
-     * Список всех записей
+     * Список всех записей.
      */
     private final Output out;
 

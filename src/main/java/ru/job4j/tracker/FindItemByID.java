@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 public class FindItemByID implements UserAction {
     /**
-     * Поиск записей по ID
+     * Поиск записей по ID.
      */
     private final Output out;
 
