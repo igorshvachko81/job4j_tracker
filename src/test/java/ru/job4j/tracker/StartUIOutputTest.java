@@ -8,6 +8,9 @@ import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 public class StartUIOutputTest {
+    /**
+     * Тесты методов по выводу на консоль
+     */
     @Test
     public void whenReplaceItemTestOutputIsSuccessfully() {
         Output out = new StubOutput();
