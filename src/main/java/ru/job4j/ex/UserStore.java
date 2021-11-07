@@ -19,12 +19,10 @@ public class UserStore {
     }
 
     public static boolean validate(User user) throws UserInvalidExeption {
-        boolean valid = true;
         if (!user.isValid() || user.getUsername().length() < 3) {
-            valid = false;
             throw new UserInvalidExeption("User " + user.getUsername() + " not valid.");
         }
-        return valid;
+        return true;
     }
 
     public static void main(String[] args) {
