@@ -1,10 +1,8 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
-import org.w3c.dom.ls.LSOutput;
-
+import java.util.List;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 public class StartUIOutputTest {
@@ -132,7 +130,7 @@ public class StartUIOutputTest {
                 new ExitProgram(out)
         };
         new StartUI(out).init(in, tracker, actions);
-        Item one = tracker.findByName("test1")[0];
+        List<Item> one = tracker.findByName("test1");
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
