@@ -54,7 +54,6 @@ public class Item implements Comparable<Item> {
         return "Item{"
                 + "id=" + id
                 + ", name='" + name + '\''
-               // + ", created=" + created.format(FORMATTER)
                 + '}';
     }
 
@@ -74,7 +73,6 @@ public class Item implements Comparable<Item> {
         Item another = (Item) o;
         return Objects.equals(id, another.id)
                 && Objects.equals(name, another.name);
-                //&& Objects.equals(created, another.created);
     }
 
     @Override
