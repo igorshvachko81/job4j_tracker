@@ -7,17 +7,14 @@ import java.util.Comparator;
 public class StringCompare implements Comparator<String> {
     @Override
     public int compare(String left, String right) {
-        int index = 0;
+        int range = Math.min(left.length(), right.length());
         int rez;
-        while (index < left.length() && index < right.length()) {
+        for (int index = 0; index < range; index++) {
             rez = Character.compare(left.charAt(index), right.charAt(index));
-            if (rez == 0) {
-                index++;
-            } else {
+            if (rez != 0) {
                 return rez;
             }
         }
-        rez = Integer.compare(left.length(), right.length());
-        return rez;
+        return Integer.compare(left.length(), right.length());
     }
 }
