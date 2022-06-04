@@ -43,4 +43,22 @@ public class PhoneDictionaryTest {
         assertTrue(persons.isEmpty());
     }
 
+    @Test
+    public void whenFindByAdvancedFind() {
+        PhoneDictionary phones = new PhoneDictionary();
+        phones.add(
+                new Person("Jonh", "Rembo", "82045078", "Smalltown")
+        );
+        phones.add(
+                new Person("Petr", "Arsentev", "534872", "Bryansk")
+        );
+        phones.add(
+                new Person("Ivan", "Arsentev", "534873", "Bryansk")
+        );
+        System.out.println("Search keyword is: \"Ars\"");
+        ArrayList<Person> persons = phones.advFind("Ars");
+        assertThat(persons.get(0).getSurname(), is("Arsentev"));
+        assertThat(persons.get(1).getSurname(), is("Arsentev"));
+    }
+
 }
