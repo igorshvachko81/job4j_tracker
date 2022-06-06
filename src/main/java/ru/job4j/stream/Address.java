@@ -16,6 +16,10 @@ public class Address {
 
     }
 
+    public String getCity() {
+        return city;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(city, street, house, apartment);
