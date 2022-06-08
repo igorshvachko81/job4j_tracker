@@ -68,6 +68,18 @@ public class BankService {
     }
 
     /**
+     * Метод повторяет функционал метода findByPassport,
+     * но в стиле Stream API
+     */
+
+    public User findByPassportStreamStyle(String passport) {
+        return users.keySet().stream()
+                .filter(c -> c.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
+    }
+
+    /**
      * Метод позволяет осуществлять поиск среди клиентов по полю
      * паспорт наличие счета с соответствующим значением поля реквизит.
      * И в случае совпадения возвращает ссылку на соответствующий счет,
@@ -89,6 +101,22 @@ public class BankService {
             }
         }
         return null;
+    }
+
+    /**
+     * Метод повторяет функционал метода findByRequisite,
+     * но в стиле Stream API
+     */
+
+    public Account findByRequisiteInStreamStyle(String passport, String requisite) {
+        User client = findByPassportStreamStyle(passport);
+        if (client != null) {
+            return users.get(client).stream()
+                    .filter(r -> r.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
+        }
+        return (null);
     }
 
     /**
