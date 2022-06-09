@@ -1,9 +1,7 @@
 package ru.job4j.bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * Класс представляет ряд банковских сервисов:
@@ -72,11 +70,10 @@ public class BankService {
      * но в стиле Stream API
      */
 
-    public User findByPassportStreamStyle(String passport) {
+    public Optional<User> findByPassportStreamStyle(String passport) {
         return users.keySet().stream()
                 .filter(c -> c.getPassport().equals(passport))
-                .findFirst()
-                .orElse(null);
+                .findFirst();
     }
 
     /**
@@ -108,15 +105,11 @@ public class BankService {
      * но в стиле Stream API
      */
 
-    public Account findByRequisiteInStreamStyle(String passport, String requisite) {
-        User client = findByPassportStreamStyle(passport);
-        if (client != null) {
-            return users.get(client).stream()
-                    .filter(r -> r.getRequisite().equals(requisite))
-                    .findFirst()
-                    .orElse(null);
-        }
-        return (null);
+    public Optional<Account> findByRequisiteInStreamStyle(String passport, String requisite) {
+        Optional<User> client = findByPassportStreamStyle(passport);
+        return client.flatMap(user -> users.get(user).stream()
+                .filter(a -> a.getRequisite().equals(requisite))
+                .findFirst());
     }
 
     /**
@@ -143,5 +136,14 @@ public class BankService {
             rsl = true;
         }
         return rsl;
+    }
+
+    public static void main(String[] args) {
+        User user = new User("FN3434Y", "Petr Arsentev");
+        BankService bank = new BankService();
+        bank.addUser(user);
+        bank.addAccount(user.getPassport(), new Account("5546", 150D));
+        System.out.println(bank.findByPassportStreamStyle("FN3434Y"));
+        System.out.println(bank.findByRequisiteInStreamStyle("FN3434Y", "5546"));
     }
 }

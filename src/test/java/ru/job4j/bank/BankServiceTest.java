@@ -2,6 +2,8 @@ package ru.job4j.bank;
 
 import org.junit.Test;
 
+import java.util.Optional;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
@@ -20,7 +22,7 @@ public class BankServiceTest {
         User user = new User("FN3434Y", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
-        assertThat(bank.findByPassportStreamStyle("FN3434Y"), is(user));
+        assertThat(bank.findByPassportStreamStyle("FN3434Y"), is(Optional.of(user)));
     }
 
     @Test
@@ -39,7 +41,7 @@ public class BankServiceTest {
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
         assertThat(bank.findByRequisiteInStreamStyle("FN3434Y", "5546"),
-                is(new Account("5546", 150D)));
+                is(Optional.of(new Account("5546", 150D))));
     }
 
     @Test
