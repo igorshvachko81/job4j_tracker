@@ -4,7 +4,7 @@ public class Card {
     private Suit suit;
     private Value value;
 
-    Card(Suit s, Value v) {
+    public Card(Suit s, Value v) {
         suit = s;
         value = v;
     }
